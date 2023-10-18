@@ -3,7 +3,9 @@ from pytube import YouTube
 import os
 
 app = Flask(__name__)
-
+@app.route('/')
+def defaultpg():
+    return 'Hello Universe'
 @app.route('/download/<yturl>')
 def download_video(yturl):
     def download(link, download_path):
